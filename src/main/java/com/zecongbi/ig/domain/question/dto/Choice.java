@@ -1,9 +1,15 @@
 package com.zecongbi.ig.domain.question.dto;
 
-public record Choice(
-    Message message,
-    String finishReason,
-    int index
-) {
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@NoArgsConstructor
+public class Choice {
+
+  private Message message;
+  @JsonProperty(value = "finish_reason")
+  private String finishReason;
+  private int index;
 }
