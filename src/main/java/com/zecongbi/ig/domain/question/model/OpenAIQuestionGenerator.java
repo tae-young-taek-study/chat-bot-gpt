@@ -43,7 +43,6 @@ public class OpenAIQuestionGenerator implements QuestionGenerator {
         List.of(new Message(feignClientConfig.getRole(), Category.collectCategories())));
     ChatGPTResponse chatGPTResponse = feignClient.sendQuestion(chatGPTRequest);
     String interviewResponse = chatGPTResponse.getChoices().get(0).getMessage().getContent();
-    System.out.println(interviewResponse);
     try {
       return objectMapper.readValue(interviewResponse, new TypeReference<>() {});
     } catch (JsonProcessingException e) {
