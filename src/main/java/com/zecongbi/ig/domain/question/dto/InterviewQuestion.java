@@ -11,4 +11,8 @@ public class InterviewQuestion {
   private String question;
   private List<String> keywords;
 
+  public InterviewQuestion(String question, List<String> keywords) {
+    this.question = question;
+    this.keywords = keywords;
+  }
 }
