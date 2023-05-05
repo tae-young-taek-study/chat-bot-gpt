@@ -16,8 +16,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import lombok.Getter;
 
 @Entity
+@Getter
 public class Question extends BaseEntity {
 
   @Id
